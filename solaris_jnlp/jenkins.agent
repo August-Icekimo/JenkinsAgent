@@ -15,16 +15,19 @@ JAVA_HOME=/usr/jdk1.8.0_231
 export JAVA_HOME
 
 jnlpUrl="http://172.18.1.42:8080/computer/solaris10_160/slave-agent.jnlp"
+export jnlpUrl
 jnlp_secret=e169cf54957c5a7a4942eaea3f67cb9f80547a3c5c4034a457fe892421be6b55
+export jnlp-secret
 user=jenkins
+export user
 
 # pid=` /usr/ucb/ps -auwwwxxxx | egrep java8 | grep jenkins | cut -d" " -f4`
 # echo $pid > /var/run/jenkins.agent
 
-    (su $user -c $JAVA_HOME/bin/java -jar /var/lib/jenkins/agent.jar \
+    (su - $user -c "$JAVA_HOME/bin/java -jar /var/lib/jenkins/agent.jar \
  -jnlpUrl $jnlpUrl \
  -secret $jnlp_secret \
--workDir "/var/lib/jenkins") \
+ -workDir "/var/lib/jenkins"") \
 >/dev/null 2>&1
         exit 0
         ;;
