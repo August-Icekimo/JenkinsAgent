@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# Copyright (c) 2019 by DTC Consult Icekimo Chen.
+#
+# /etc/rc2.d/S99jenkins.agent - RUN Jenkins Agent JNLP
+
+case $1 in
+'start')
+JAVA_HOME=/usr/jdk1.8.0_231
+export JAVA_HOME
+
+#pid=` /usr/ucb/ps -auwwwxxxx | egrep java8 | grep jenkins | cut -d" " -f4`
+#echo $pid > /var/run/jenkins.agent
+
+    (/usr/bin/java8 -jar /var/lib/jenkins/agent.jar -jnlpUrl http://172.18.1.42:8080/computer/solaris10_160/slave-agent.jnlp \
+ -secret e169cf54957c5a7a4942eaea3f67cb9f80547a3c5c4034a457fe892421be6b55 \
+-workDir "/var/lib/jenkins") \
+>/dev/null 2>&1
+        exit 0
+        ;;
+'stop')
+        pid=`/usr/ucb/ps -auwwwxxxx | egrep java8 | grep jenkins | cut -d" " -f4`
+        if test "$pid"
+        then
+                kill $pid
+        fi
+        exit 0
+        ;;
+*)
+        echo "Usage: /etc/init.d/jenkins.agent { start | stop }"
+        ;;
+esac
+exit 0
