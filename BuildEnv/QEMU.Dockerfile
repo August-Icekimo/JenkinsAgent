@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 # MAINTAINER Icekimo august.icekimo@gmail.com
 
-LABEL description="Create a Jenkins Agent to build others"
+LABEL description="Build Enviroment for "
 
 # Install Build Packages
 RUN apt-get update && apt-get install -y \
