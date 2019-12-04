@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
-# MAINTAINER Icekimo august.icekimo@gmail.com
-
+LABEL MAINTAINER =august.icekimo@gmail.com
 LABEL description="Build Enviroment for "
 
 # Install Build Packages
