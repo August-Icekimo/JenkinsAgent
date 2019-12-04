@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 LABEL MAINTAINER =august.icekimo@gmail.com
-LABEL description="Build Enviroment for "
+LABEL description="Build Enviroment for QEMU"
 
 # Install Build Packages
 RUN apt-get update && apt-get install -y \
