@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
   libcap-dev libcap-ng-dev libcurl4-gnutls-dev libgtk-3-dev \
   libibverbs-dev libjpeg8-dev libncurses5-dev libnuma-dev \
   librbd-dev librdmacm-dev \
+   flex bison \
   libsasl2-dev libsdl1.2-dev libseccomp-dev libsnappy-dev libssh2-1-dev \
   libvde-dev libvdeplug-dev libvte-2.90-dev libxen-dev liblzo2-dev \
   valgrind xfslibs-dev  &&\
