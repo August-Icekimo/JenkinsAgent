@@ -26,7 +26,7 @@ ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN  mkdir -p ${AGENT_WORKDIR} && chown -R ${gid}:${uid} ${AGENT_WORKDIR} 
 
 USER ${user}
-RUN cd /home/${user}&& wget https://${J_URL}/jnlpJars/agent.jar -O /home/${user}/agent.jar
+RUN cd /home/${user}&& wget --no-check-certificate https://${J_URL}/jnlpJars/agent.jar -O /home/${user}/agent.jar
 RUN chmod 755 /home/${user}  && chmod 755 /home/${user}/agent.jar
 WORKDIR /home/${user}
 
