@@ -10,7 +10,7 @@ ARG uid=1000
 ARG gid=1000
 ENV user=${user}
 
- RUN  useradd -c "Jenkins user" -d /home/${user} -u ${uid} -m ${user} &&\
+RUN  apt update && apt install sudo wget default-jre -y && useradd -c "Jenkins user" -d /home/${user} -u ${uid} -m ${user} &&\
     echo '${user} ALL=NOPASSWD: ALL' > /etc/sudoers.d/${user}  
 
 # Add JNLP info
