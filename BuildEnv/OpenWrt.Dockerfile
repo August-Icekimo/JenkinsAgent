@@ -6,5 +6,5 @@ LABEL description="Build Enviroment for OpenWrt "
 RUN apt-get update && apt-get install -y \
    sudo time git-core subversion build-essential gcc-multilib quilt rsync \
    libncurses5-dev zlib1g-dev gawk flex gettext wget unzip python default-jdk \
-    git-lfs vim  &&\
-    apt-get clean
+   git-lfs vim &&\
+   apt-get clean
