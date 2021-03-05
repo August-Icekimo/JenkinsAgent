@@ -1,4 +1,4 @@
-ARG ImgName=ubuntu:18.04
+ARG ImgName=ubuntu:20.04
 FROM ${ImgName}
 LABEL MAINTAINER=august.icekimo@gmail.com
 LABEL description="Create a Jenkins Agent to build others"
@@ -15,7 +15,7 @@ RUN  apt update && apt install sudo wget default-jre -y && useradd -c "Jenkins u
 
 # Add JNLP info
 ARG J_URL=jenkins.icekimo.idv.tw
-ARG SECRET=12baa94ce940afa92d2623dc35becc30d8dfd99539f4a3586a5f634af7a77345
+ARG SECRET=b523c0b8a6b94d345e272bdbb978d59efbafa8eda6db17f31795566ec2a3cb31
 ARG AGENT_WORKDIR=/var/lib/jenkins
 ARG NODE_NAME=Kelly
 
