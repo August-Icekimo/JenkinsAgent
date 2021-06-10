@@ -1,7 +1,8 @@
 FROM jenkins/jenkins:lts
 LABEL MAINTAINER=august.icekimo@gmail.com
 LABEL description="Create a Jenkins DIND BlueOcean https://www.jenkins.io/doc/book/installing/docker/ "
-
+VOLUME [ "/certs/client" ]
+VOLUME [ "/var/jenkins_home" ]
 USER root
 RUN apt-get update && apt-get install -y apt-transport-https \
        ca-certificates curl gnupg2 \
